@@ -1,0 +1,115 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.current_event {
+  margin-left: 650px;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary {
+  font-size: 10px;
+  margin-left: 20px;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textPrimary.MuiButton-textSizeSmall.MuiButton-sizeSmall {
+  margin-left: 13px;
+}
+
+.MuiAvatar-root.MuiAvatar-circle {
+  width: 100px;
+  height: 90px;
+}
+
+.MuiListItem-root.MuiListItem-gutters.MuiListItem-alignItemsFlexStart {
+  align-items: center;
+}
+
+.MuiDivider-root.MuiDivider-inset {
+  margin-left: 0px;
+}
+
+.MuiListItemText-root.MuiListItemText-multiline {
+  font-size: 250%;
+  font-weight: 900;
+  padding-left: 20px;
+}
+
+.MuiList-root.makeStyles-root-1.MuiList-padding {
+  max-width: 1000px;
+  padding-left: 250px;
+}
+
+div {
+  float: none;
+}
+
+.MuiToggleButtonGroup-root {
+  margin-left: 20px;
+  margin-top: 25px;
+}
+
+.MuiButtonBase-root.MuiToggleButton-root.MuiToggleButtonGroup-grouped.MuiToggleButtonGroup-groupedHorizontal.module {
+  margin-right: 270px;
+}
+
+.card-title {
+  font-weight: 900;
+}
+
+.card-deck {
+  width: 285px;
+  height: 550px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-left: 13px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.card {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.card-img-top {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 250px;
+}
