@@ -49,7 +49,17 @@ function App() {
   const handleViewList = () => {
     setisGrid(false);
   };
+  
+  // if (window.performance) {
+  //   if (performance.navigation.type == 1) {
+  //     alert( "This page is reloaded" );
+  //   } else {
+  //     alert( "This page is not reloaded");
+  //   }
+  // }
+
   useEffect(() => {
+    
     fetch("https://allevents.s3.amazonaws.com/tests/categories.json")
       .then((response) => response.json())
       .then((response) => {
@@ -57,7 +67,7 @@ function App() {
         setcategories(response);
         console.log("Inside category events call...");
       });
-  }, [categories]);
+  }, []);
 
   function ViewEvents(e, index) {
     console.log(isGrid);
@@ -143,7 +153,6 @@ function App() {
 
   const getEvents = (category) => {
     let url = "https://allevents.s3.amazonaws.com/tests/all.json";
-    <div></div>
 
     if (category === "all")
       url = "https://allevents.s3.amazonaws.com/tests/all.json";
@@ -197,6 +206,7 @@ function App() {
         {categories.map((c) => (
           <ColorButton
             style={{ margin: "30px", fontSize: "15px"}}
+            key={c.category}
             className="event_buttons"
             color="primary"
             variant="contained"
