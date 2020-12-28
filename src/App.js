@@ -38,28 +38,11 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const [listOfEvents, setlistOfEvents] = useState([]);
   const [categories, setcategories] = useState([]);
-  const [currentCategory, setcurrentCategory] = useState('');
+  const [currentCategory, setcurrentCategory] = useState("");
   const [isGrid, setisGrid] = useState(true);
   const classes = useStyles();
 
-  const handleViewGrid = () => {
-    setisGrid(true);
-  };
-
-  const handleViewList = () => {
-    setisGrid(false);
-  };
-  
-  // if (window.performance) {
-  //   if (performance.navigation.type == 1) {
-  //     alert( "This page is reloaded" );
-  //   } else {
-  //     alert( "This page is not reloaded");
-  //   }
-  // }
-
   useEffect(() => {
-    
     fetch("https://allevents.s3.amazonaws.com/tests/categories.json")
       .then((response) => response.json())
       .then((response) => {
@@ -68,6 +51,39 @@ function App() {
         console.log("Inside category events call...");
       });
   }, []);
+
+  const getEvents = (category) => {
+    let url = "https://allevents.s3.amazonaws.com/tests/all.json";
+
+    if (category === "all")
+      url = "https://allevents.s3.amazonaws.com/tests/all.json";
+    else if (category === "music")
+      url = "https://allevents.s3.amazonaws.com/tests/music.json";
+    else if (category === "business")
+      url = "https://allevents.s3.amazonaws.com/tests/business.json";
+    else if (category === "sports")
+      url = "https://allevents.s3.amazonaws.com/tests/sports.json";
+    else url = "https://allevents.s3.amazonaws.com/tests/workshops.json";
+
+    console.log(category);
+    fetch(url)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        console.log(response.item);
+
+        setlistOfEvents(response.item);
+        console.log("Inside getting events call...");
+      });
+  };
+  
+  const handleViewGrid = () => {
+    setisGrid(true);
+  };
+
+  const handleViewList = () => {
+    setisGrid(false);
+  };
 
   function ViewEvents(e, index) {
     console.log(isGrid);
@@ -92,21 +108,21 @@ function App() {
                     ></Typography>
                     {e.venue.full_address}
                     <Button
-                  variant="contained"
-                  color="primary"
-                  href={e.tickets.ticket_url}
-                  target="_blank"
-                >
-                  Tickets
-                </Button>
-                <Button
-                  size="small"
-                  color="primary"
-                  href={e.event_url}
-                  target="_blank"
-                >
-                  Learn More
-                </Button>
+                      variant="contained"
+                      color="primary"
+                      href={e.tickets.ticket_url}
+                      target="_blank"
+                    >
+                      Tickets
+                    </Button>
+                    <Button
+                      size="small"
+                      color="primary"
+                      href={e.event_url}
+                      target="_blank"
+                    >
+                      Learn More
+                    </Button>
                   </React.Fragment>
                 }
               />
@@ -151,36 +167,6 @@ function App() {
     }
   }
 
-  const getEvents = (category) => {
-    let url = "https://allevents.s3.amazonaws.com/tests/all.json";
-
-    if (category === "all")
-      url = "https://allevents.s3.amazonaws.com/tests/all.json";
-  
-    else if (category === "music")
-      url = "https://allevents.s3.amazonaws.com/tests/music.json";
-    
-    else if (category === "business")
-      url = "https://allevents.s3.amazonaws.com/tests/business.json";
-    
-    else if (category === "sports")
-      url = "https://allevents.s3.amazonaws.com/tests/sports.json";
-    
-    else
-      url = "https://allevents.s3.amazonaws.com/tests/workshops.json";
-    
-    console.log(category);
-    fetch(url)
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        console.log(response.item);
-
-        setlistOfEvents(response.item);
-        console.log("Inside getting events call...");
-      });
-  };
-
   return (
     <div>
       <div className="event_categories">
@@ -205,7 +191,7 @@ function App() {
 
         {categories.map((c) => (
           <ColorButton
-            style={{ margin: "30px", fontSize: "15px"}}
+            style={{ margin: "30px", fontSize: "15px" }}
             key={c.category}
             className="event_buttons"
             color="primary"
