@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-events/static/css/main.f642c6c3.chunk.css",
-    "main.js": "/react-events/static/js/main.eee9923e.chunk.js",
-    "main.js.map": "/react-events/static/js/main.eee9923e.chunk.js.map",
+    "main.js": "/react-events/static/js/main.94ff9a3e.chunk.js",
+    "main.js.map": "/react-events/static/js/main.94ff9a3e.chunk.js.map",
     "runtime-main.js": "/react-events/static/js/runtime-main.9497e922.js",
     "runtime-main.js.map": "/react-events/static/js/runtime-main.9497e922.js.map",
     "static/js/2.eac6e75c.chunk.js": "/react-events/static/js/2.eac6e75c.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.9497e922.js",
     "static/js/2.eac6e75c.chunk.js",
     "static/css/main.f642c6c3.chunk.css",
-    "static/js/main.eee9923e.chunk.js"
+    "static/js/main.94ff9a3e.chunk.js"
   ]
 }
